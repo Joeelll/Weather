@@ -7,7 +7,7 @@
 	xmlns:tools="http://schemas.android.com/tools"	
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="@drawable/clouds"
+	android:background="@drawable/background"
 	android:minWidth="25px"
 	android:minHeight="25px">
 	<LinearLayout
@@ -53,7 +53,6 @@
 		android:layout_height="75dp"
 		android:layout_x="150dp"	
 		android:layout_y="45dp"
-		android:layout_below="@id/absoluteLayout1"
 		android:id="@+id/pictureWeather"
 		android:layout_centerHorizontal="true"
 		android:layout_alignBaseline="@id/absoluteLayout1"
@@ -76,6 +75,7 @@
 			android:layout_y="160dp"
 			android:gravity="center_horizontal"
 		    android:layout_gravity="center_horizontal"
+			android:layout_below="@id/textTemperature"
 			android:id="@+id/textTempavg"/>
 		<TextView
 			android:text="Windspeed"
@@ -95,18 +95,15 @@
 			android:gravity="center_horizontal"
 		    android:layout_gravity="center_horizontal"
 			android:id="@+id/textPressure" />
-		
-<!--		<TextView
-			android:text="Weather in:                      today"
-			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_x="50dp"
-			android:layout_y="50dp"
-			android:id="@+id/textInfo" /> -->
-		
-		
-		
-	</AbsoluteLayout>	
+		<Button
+		android:text="Forecast"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_y="240dp"
+		android:gravity = "center"
+		android:onClick = "buttonForecast_Click"
+		android:id="@+id/buttonForecast" />	
 
+		
+	</AbsoluteLayout>
 </RelativeLayout>

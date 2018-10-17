@@ -8,6 +8,7 @@ using WeatherApp.Core;
 using System.Drawing;
 using System.Net;
 using Android.Graphics;
+using Android.Content;
 
 namespace WeatherApp
 {
@@ -21,14 +22,15 @@ namespace WeatherApp
         ImageView pictureWeather;
         SearchView cityName;
         TextView textAvg;
-        
-        protected  override  void OnCreate(Bundle savedInstanceState)
+
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
             var button = FindViewById<Button>(Resource.Id.button1);
+            var buttonForecast = FindViewById<Button>(Resource.Id.buttonForecast);
             textTemp = FindViewById<TextView>(Resource.Id.textTemperature);
             textPres = FindViewById<TextView>(Resource.Id.textPressure);
             textWind = FindViewById<TextView>(Resource.Id.textWindspeed);
@@ -36,14 +38,10 @@ namespace WeatherApp
             cityName = FindViewById<SearchView>(Resource.Id.searchCityname);
             textAvg = FindViewById<TextView>(Resource.Id.textTempavg);
             pictureWeather = FindViewById<ImageView>(Resource.Id.pictureWeather);
-            
-
-            //color
-            var background = FindViewById<RelativeLayout>(Resource.Id.relativeLayout);
-            //background.SetBackgroundColor(Android.Graphics.Color.ParseColor("#05b9ee"));
-            //background.SetBackgroundResource(Resource.Drawable.background);
+            //var background = FindViewById<RelativeLayout>(Resource.Id.relativeLayout);
 
             button.Click += Button_Click;
+            buttonForecast.Click += buttonForecast_Click;
         }
 
         public async void Button_Click(object sender, System.EventArgs e)
@@ -53,13 +51,21 @@ namespace WeatherApp
             textPres.Text = weather.Pressure;
             textWind.Text = weather.Windspeed;
             textName.Text = weather.Cityname;
-            textAvg.Text = weather.Tempavg;
+            textAvg.Text = weather.TemperatureLow + " / " + weather.TemperatureHigh;
             //var imageBitmap = GetBitmapfromUrl("http://openweathermap.org/img/w/{weather.Icon}.png");
             string weatherIconUrl = "http://openweathermap.org/img/w/" + weather.Icon + ".png";
             var imageBitmap = GetImageBitmapFromUrl(weatherIconUrl);
             pictureWeather.SetImageBitmap(imageBitmap);
             pictureWeather.SetScaleType(ImageView.ScaleType.FitXy);
 
+        }
+        
+        public async void buttonForecast_Click(object sender, EventArgs e)
+        {
+            var weather = await Core.Core.GetWeather(cityName.Query);
+            Intent intent = new Intent(this, typeof(WeatherListActivity));
+            intent.PutExtra("input", weather.Cityname);
+            StartActivity(intent);
         }
 
         static Bitmap GetImageBitmapFromUrl(string url)
@@ -73,23 +79,7 @@ namespace WeatherApp
                     imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
                 }
             }
-
             return imageBitmap;
         }
-        
-
-            //public static Android.Graphics.Bitmap GetBitmapFromUrl(string url)
-            //{
-            //    using (WebClient webClient = new WebClient())
-            //    {
-            //        byte[] bytes = webClient.DownloadData(url);
-            //        if (bytes != null && bytes.Length > 0)
-            //        {
-            //            return Android.Graphics.BitmapFactory.DecodeByteArray(bytes, 0, bytes.Length);
-            //        }
-            //    }
-            //    return null;
-            //}
-
-        }
+    }
 }

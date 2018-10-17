@@ -2396,6 +2396,9 @@ namespace WeatherApp
 			// aapt resource value: 0x7F020005
 			public const int button1 = 2130837509;
 			
+			// aapt resource value: 0x7F020013
+			public const int buttonForecast = 2130837523;
+			
 			// aapt resource value: 0x7F0C001B
 			public const int buttonPanel = 2131492891;
 			
@@ -2425,6 +2428,9 @@ namespace WeatherApp
 			
 			// aapt resource value: 0x7F0C0024
 			public const int customPanel = 2131492900;
+			
+			// aapt resource value: 0x7F020014
+			public const int date = 2130837524;
 			
 			// aapt resource value: 0x7F0C0025
 			public const int decor_content_parent = 2131492901;
@@ -2477,8 +2483,8 @@ namespace WeatherApp
 			// aapt resource value: 0x7F0C0035
 			public const int home = 2131492917;
 			
-			// aapt resource value: 0x7F0C000A
-			public const int icon = 2131492874;
+			// aapt resource value: 0x7F020015
+			public const int icon = 2130837525;
 			
 			// aapt resource value: 0x7F0C000B
 			public const int icon_group = 2131492875;
@@ -2512,6 +2518,9 @@ namespace WeatherApp
 			
 			// aapt resource value: 0x7F0C0040
 			public const int listMode = 2131492928;
+			
+			// aapt resource value: 0x7F020018
+			public const int listView1 = 2130837528;
 			
 			// aapt resource value: 0x7F0C0041
 			public const int list_item = 2131492929;
@@ -2689,6 +2698,12 @@ namespace WeatherApp
 			
 			// aapt resource value: 0x7F0C0016
 			public const int tag_transition_group = 2131492886;
+			
+			// aapt resource value: 0x7F020016
+			public const int tempHigh = 2130837526;
+			
+			// aapt resource value: 0x7F020017
+			public const int tempLow = 2130837527;
 			
 			// aapt resource value: 0x7F0C0017
 			public const int text = 2131492887;
@@ -2914,6 +2929,9 @@ namespace WeatherApp
 			// aapt resource value: 0x7F030002
 			public const int activity_main = 2130903042;
 			
+			// aapt resource value: 0x7F030003
+			public const int CustomRow = 2130903043;
+			
 			// aapt resource value: 0x7F0F001B
 			public const int design_bottom_navigation_item = 2131689499;
 			
@@ -3015,6 +3033,9 @@ namespace WeatherApp
 			
 			// aapt resource value: 0x7F0F003C
 			public const int tooltip = 2131689532;
+			
+			// aapt resource value: 0x7F030004
+			public const int weather_list = 2130903044;
 			
 			static Layout()
 			{

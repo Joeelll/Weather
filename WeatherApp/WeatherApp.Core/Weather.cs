@@ -12,9 +12,11 @@ namespace WeatherApp.Core
         public string Pressure { get; set; } = " ";
         public string Windspeed { get; set; } = " ";
         public string Cityname { get; set; } = " ";
-        public string Tempavg { get; set; } = " ";
+        public string TemperatureLow { get; set; } = " ";
+        public string TemperatureHigh { get; set; } = " ";
         public string Type { get; set; } = " ";
         public string Icon { get; set; } = " ";
+        public string Date { get; set; } = " ";
     }
 
 }
