@@ -1,0 +1,2 @@
+C:\Users\opilane\Documents\GitHub\prog\WeatherApp\WeatherApp\obj\Debug\MonoAndroid81\WeatherApp.csprojAssemblyReference.cache
+C:\Users\opilane\Documents\GitHub\prog\WeatherApp\WeatherApp\obj\Debug\MonoAndroid81\res.flag
